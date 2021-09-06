@@ -4,3 +4,7 @@
 
 layout: home
 ---
+
+# Hi
+
+There's not much here yet.
