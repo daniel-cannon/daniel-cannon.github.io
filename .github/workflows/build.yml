@@ -27,7 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install gems
-        run: gem install jekyll bundler
+        run: sudo gem install jekyll bundler
+      
+      - name: Set bundler path
+        run: bundle config set --local path 'vendor/bundle'
         
       - name: Build for production
         run: JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build ./docs
