@@ -25,13 +25,26 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      - name: Set env vars
+        run: |
+          export JEKYLL_ENV=production
+          export NODE_ENV=production
+
       - name: Install gems
-        run: sudo gem install jekyll bundler
+        run: |
+          sudo gem install bundler jekyll
+          bundle config set --local path 'vendor/bundle'
+          bundle install
       
-      - name: Set bundler path
-        run: bundle config set --local path 'vendor/bundle'
-        
-      - name: Build for production
-        run: JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build ./docs
+      - name: Install NPM packages
+        run: npm install
+      
+      - name: Clean site
+        run: |
+          if [ -d "docs" ]; then
+            rm -rf docs/*
+          fi
+      
+      - name: Build site
+        run: bundle exec jekyll build -d docs
         
