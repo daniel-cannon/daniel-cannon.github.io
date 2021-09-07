@@ -2,6 +2,9 @@
 	"name": "daniel-cannon.github.io",
 	"version": "1.0.0",
 	"private": true,
+	"scripts": {
+		"build": "JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build -d docs"
+	},
 	"dependencies": {},
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.4.1",
