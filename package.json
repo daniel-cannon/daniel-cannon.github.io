@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"build": "JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build -d docs"
+		"serve": "bundle exec jekyll serve -d _site",
+		"build": "JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build"
 	},
 	"dependencies": {},
 	"devDependencies": {

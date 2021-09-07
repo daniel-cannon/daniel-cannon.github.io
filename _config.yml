@@ -18,6 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+destination: ./docs
 title: Daniel Cannon
 email: hello@daniel-cannon.co.uk
 description: >- # this means to ignore newlines until "baseurl:"
@@ -52,3 +53,4 @@ exclude:
   - tailwind.config.js
   - postcss.config.js
   - README.md
+  - docs/
