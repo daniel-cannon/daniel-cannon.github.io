@@ -26,6 +26,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
+      - name: Install gems
+        run: gem install jekyll bundler
+        
       - name: Build for production
-        run: JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
+        run: JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build ./docs
         
